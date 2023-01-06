@@ -1,8 +1,12 @@
 
-function LoginButton(){
+function LoginButton() {
+    const hanldeSubmit = (event) => {
+        localStorage.setItem('loginKey', true);
+        window.location.reload(true);
+    };
     return (
-        <div>
-
+        <div >
+            <button className="loginButton" onClick={hanldeSubmit}>Login</button>
         </div>
     )
 }
