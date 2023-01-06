@@ -4,13 +4,13 @@ import Product from "../Components/ProductPages/Product";
 import Navbar from "../Components/Navbar/Navbar";
 import Checkout from "../Components/Checkout/Checkout";
 import ProductDetails from "../Components/ProductDetail/ProductDetails";
-import GoToTop from "../Components/Home/GoToTop/GoToTop"
-import Blog from "../Components/Blog/Blog";
 
 function AllRoutes() {
   return (
     <div>
+      
       <Navbar />
+      <Login/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />
