@@ -13,7 +13,7 @@ function AllRoutes() {
     <div>
       
       <Navbar />
-      <Login/>
+      {/* <Login/> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />
