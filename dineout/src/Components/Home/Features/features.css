@@ -5,6 +5,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 100px;
+    margin-bottom: 80px;
 }
 
 .feature-card {
@@ -32,6 +33,10 @@
     display: flex;
     align-items: center;
     padding: 0px 30px;
+}
+
+.feature-card:hover {
+    background-color: #f3f3f3;
 }
 
 .feature-card img {

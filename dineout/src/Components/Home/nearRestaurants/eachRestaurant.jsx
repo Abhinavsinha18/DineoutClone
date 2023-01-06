@@ -19,7 +19,7 @@ function EachRestaurant({item}) {
             <div>
                 {item.tag ? 
                 <div className="restaurant-tag">
-                    <i class="fa-solid fa-percent"></i>
+                    <i className="fa-solid fa-percent"></i>
                     <p>{item.tag}</p>
                 </div>
                  : ""}
