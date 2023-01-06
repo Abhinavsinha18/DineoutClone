@@ -92,7 +92,6 @@
   position: fixed;
   right: 5rem;
   top: 12rem;
-  border: 1px solid black;
 }
 
 .container .proceed .select {
@@ -218,4 +217,27 @@
 
 .guestDetails {
   margin-left: 1rem;
+}
+
+.checkout {
+  display: block;
+  margin: auto;
+  padding: 6px;
+}
+.checkout .checkBtn {
+  width: 16rem;
+  padding: 0.7rem;
+  outline: none;
+  border: none;
+  background: rgb(255, 124, 63);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: 0.7s;
+  box-shadow: 0 0 6px coral;
+}
+.checkBtn:hover {
+  background: rgb(235, 93, 27);
 }

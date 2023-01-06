@@ -225,6 +225,9 @@ const ProductDetails = ({ e }) => {
             <p>Enter Guest Details</p>
           </div>
         </div>
+        <div className="checkout">
+          <button className="checkBtn">Continue</button>
+        </div>
       </div>
     </div>
   );
