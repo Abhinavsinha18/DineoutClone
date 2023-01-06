@@ -1,0 +1,9 @@
+.a-container{
+    background-color:#f4f4f4;
+    display: flex;
+    padding: 1%;
+    gap: 25px;
+    margin-top: 70px;
+    padding-left: 13%;
+    padding-right: 13%;
+}
