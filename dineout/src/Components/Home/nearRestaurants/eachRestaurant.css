@@ -6,7 +6,8 @@
 .restaurant-cover-div {
     width: 266px;
     height: 138px;
-    border-bottom: 2px solid #ff654a
+    border-bottom: 2px solid #ff654a;
+    overflow: hidden;
 }
 
 .restaurant-cover-div img {
@@ -15,6 +16,11 @@
     height: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    transition: transform 2s;
+}
+.restaurant-cover-div:hover img {
+    transform: scale(1.2);
+    
 }
 
 .restaurant-info {
