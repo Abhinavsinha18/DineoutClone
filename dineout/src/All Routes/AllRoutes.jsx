@@ -4,11 +4,14 @@ import Product from "../Components/ProductPages/Product";
 import Navbar from "../Components/Navbar/Navbar";
 import Checkout from "../Components/Checkout/Checkout";
 import ProductDetails from "../Components/ProductDetail/ProductDetails";
+import Login from "../Components/LoginSignup/Login";
 
 function AllRoutes() {
   return (
     <div>
+      
       <Navbar />
+      <Login/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />
