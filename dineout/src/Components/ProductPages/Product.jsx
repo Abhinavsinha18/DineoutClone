@@ -23,7 +23,7 @@ const Product = () => {
     .then((res)=>res.json())
     .then((d)=>{
       dispatch(ProductAction({d,setState}));
-      console.log(d)
+      // console.log(d)
     setState(d);
   })
   }
