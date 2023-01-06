@@ -7,7 +7,7 @@
     background: #fff;
     top: 0;
     position: fixed;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .navrootdiv {
@@ -44,7 +44,10 @@
     border: 1px solid rgb(192, 192, 192);
     font-size: 13px;
 }
-
+.navdropdown > option{
+    padding: 5px;
+    font-size: 18px;
+}
 .navAnchor {
     padding-top: 5px;
     width: 55%;
@@ -58,6 +61,7 @@
     flex-direction: row;
     justify-content: center;
     width: 15%;
+    height: 40px;
 }
 
 .navLogo {
@@ -96,6 +100,7 @@
     font-size: 16px;
     border: none;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -117,22 +122,42 @@
 .dropdown-content a:hover {
     background-color: #ddd;
 }
-.profileDrop{
+
+.profileDrop {
     margin-left: 10px;
 }
+
 .profileDrop:hover .dropdown-content {
     display: block;
 }
+
 .dropbtn:hover .dropbtn {
     background-color: #3e8e41;
 }
+
 .arrow {
     border: solid black;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
-  }
-  .down {
+}
+
+.down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-  }
+}
+
+.loginButton {
+    background-color: #FF645A;
+    box-shadow: 0 2px 5px 0 rgb(255 88 84 / 30%);
+    font-weight: bold;
+    border: none;
+    padding: 0.35rem 3.5rem;
+    color: #fff;
+    height: 2.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.loginButton:hover{
+    background-color: red;
+}
