@@ -13,7 +13,7 @@ function Blog(){
         fetch("https://dineoutclone-foc1.onrender.com/blog-TopData")
         .then((res) => res.json())
         .then((data) => {
-            //console.log(data);
+            console.log(data);
             setBlogData(data);
         })
     }, [])
