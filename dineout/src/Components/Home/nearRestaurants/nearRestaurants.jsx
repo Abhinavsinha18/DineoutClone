@@ -3,6 +3,7 @@ import PrevArrow from "../Carousel/PrevArrow";
 import Slider from "react-slick"
 import "./nearRestaurants.css";
 import EachRestaurant from "./eachRestaurant";
+import { Link } from "react-router-dom";
 
 const nearRestaurants = [
     {
@@ -83,7 +84,34 @@ const settings = {
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
   };
 
 function NearRestaurants() {
@@ -92,7 +120,7 @@ function NearRestaurants() {
             <div className="width">
                 <div className="near-title-bar">
                     <h2>Restaurants Near You</h2>
-                    <p>See All</p>
+                    <Link to="/products"><p>See All</p></Link>
                 </div>
                 <Slider {...settings}>
                     {nearRestaurants.map((elem) => {
