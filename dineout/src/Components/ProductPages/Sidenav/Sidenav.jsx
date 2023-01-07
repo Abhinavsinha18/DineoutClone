@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./sidenav.css";
 import {
     Accordion,
@@ -12,22 +12,57 @@ import store from "../../../Store"
 import { useSelector } from 'react-redux';
 
 
-const Sidenav = ({state,setState}) => {
+const Sidenav = ({state,setState,page,filtercheck}) => {
+  
+let [dataFch,setFch] = useState([]);
+
+
+
+    let inp1 = useRef(null);
+    let inp2 = useRef(null);
+    let inp3 = useRef(null);
+    let inp4 = useRef(null);
+    let inp5 = useRef(null);
+
+  let [checkboxProduct, setCheckboxProduct] = useState([
+  {
+    "name" : "Pure Veg",
+    "checked" : false,
+    "ref":inp2
+    },
+    {
+      "name" : "5 Star",
+      "checked" : false,
+      "ref":inp3
+      },
+      {
+        "name" : "Buffet",
+        "checked" : false,
+        "ref":inp4
+        },
+        {
+          "name" : "Dineout Pay",
+          "checked" : false,
+          "ref":inp1
+          },
+        {
+          "name" : "Fast Food",
+          "checked" : false,
+          "ref":inp5
+          },
+
+])
 
   let data = useSelector((store)=>store.data);
   // console.log(data);
 
-
-  const checkboxProduct = ["Dineout Pay","Pure Veg","5 Star","Buffet","Fast Food"];
   const checkboxProduct2 = ["North Indian","Fast Food","Chinese","Desserts"];
-  const checkboxProduct3 = ["Casual Dining","Case","Breakfast","Bakery"];
+  const checkboxProduct3 = ["Cafe","Breakfast","Bakery","Asian"];
   const checkboxProduct4 = ["Card Accepted","Wallet Accepted","Home Delivery","Air Conditioned"];
 
 
 
-const filtercheck =(val)=>{
 
-}
 
 
   const FilterProduct =(e)=>{
@@ -61,13 +96,13 @@ const filtercheck =(val)=>{
     <AccordionPanel pb={0} mt={-5}>
         <div className='a-sidebar-detail'>
       <div>
-        <input type="text" className='sidenav-inp' placeholder='Search'/>
+        <input type="text" className='sidenav-inp'   placeholder='Search'/>
       </div>
 
 
       {checkboxProduct.map((item,i)=>{
         return <div  key={i+1}>
-        <input type="checkbox"  value={item}  onChange={(e)=>filtercheck(e)}/> <span>{item}</span>
+        <input type="checkbox"  value={item.name} ref={item.ref} onChange={(e)=>filtercheck(e)}/> <span>{item.name}</span>
        </div>
       })}
     
@@ -122,8 +157,8 @@ const filtercheck =(val)=>{
       </div>
 
 {checkboxProduct3.map((item,i)=>{
-  return <div key={i+1}>
-  <input type="checkbox" value={item} onChange={(e)=>filtercheck(e)} /> <span>{item}</span>
+  return <div  key={i+1}>
+  <input type="checkbox"  value={item} onChange={(e)=>filtercheck(e)}/> <span>{item}</span>
  </div>
 })}
         </div>
