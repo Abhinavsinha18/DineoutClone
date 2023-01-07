@@ -1,10 +1,11 @@
-.container {
+.Shcontainer {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding-top: 3rem;
 }
-.main {
+.Shmain {
   width: 45rem;
   display: flex;
   flex-direction: column;
@@ -13,7 +14,7 @@
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-.main > div {
+.Shmain > div {
   border-bottom: 4px solid #d6d6d6;
 }
 .middle,
@@ -32,7 +33,7 @@
   margin: auto 2rem;
 }
 
-.main .top h3,
+.Shmain .top h3,
 .middle .lower .left,
 .bottom .lower .left {
   color: #868686;
