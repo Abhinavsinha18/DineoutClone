@@ -268,3 +268,14 @@
   width: 2rem;
   cursor: pointer;
 }
+
+.guestTime {
+  padding: 0.5rem;
+  background: #3595ff;
+  color: #fff;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+}
