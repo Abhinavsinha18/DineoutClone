@@ -8,8 +8,8 @@ const Checkout = ({ checkProps }) => {
     setTableStatus(true);
   }, 2000);
   return (
-    <div className="container">
-      <div className="main">
+    <div className="Shcontainer">
+      <div className="Shmain">
         <div className="top">
           <h1>{checkProps.hotelName}</h1>
           <h3>{checkProps.hotelAdd}</h3>

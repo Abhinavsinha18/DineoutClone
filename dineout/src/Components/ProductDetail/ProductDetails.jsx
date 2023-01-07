@@ -82,7 +82,7 @@ const ProductDetails = ({ e, setCheckProps }) => {
     });
   };
   return (
-    <div className="container">
+    <div className="main">
       <div className="left">
         <div className="hotel">
           <div className="upper">
