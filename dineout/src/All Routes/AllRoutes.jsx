@@ -39,6 +39,9 @@ function AllRoutes() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
       <GoToTop />
+
+
+  
     </div>
   );
 }
