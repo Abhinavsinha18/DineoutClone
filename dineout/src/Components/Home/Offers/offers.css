@@ -1,15 +1,9 @@
 .best-offers {
     display: flex;
-}
-
-.best-offers-section {
-    width: 100%;
-    height: 250px;
     background-color: #f3f3f3;
     margin-top: -20px;
     padding: 40px 0px;
-    text-align: left;
-    
+    /* height: 250px; */
 }
 .best-offers-section-div {
     margin-left: 180px;
@@ -18,7 +12,6 @@
 .best-offers-section-div h2 {
     font-size: 24px;
     font-family: "Metropolis",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-
 }
 
 .offers-images {
@@ -50,7 +43,7 @@
 }
 
 .get-app-section {
-    margin-left: -600px;
+    margin-left: 80px;
     margin-top: 20px;
 }
 
@@ -73,4 +66,10 @@
 
 .get-app-images img {
     margin-right: 30px;
+}
+
+@media (max-width: 1024) {
+    .best-offers {
+        flex-direction: column;
+    }
 }
