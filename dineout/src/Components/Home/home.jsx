@@ -13,9 +13,12 @@ let imgGif = useRef(null);
 
 let ShowLogo = ()=>{
    imgGif.current.innerText = "Book Now 🧭";
-
+   imgGif.current.style.backgroundColor = "purple";
+   
+   
 }
 let RemoveLogo = ()=>{
+    imgGif.current.style.backgroundColor = "orangered";
     imgGif.current.innerText = "HOLA 👋"
  }
 

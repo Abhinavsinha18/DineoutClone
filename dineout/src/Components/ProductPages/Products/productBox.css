@@ -63,6 +63,18 @@
     background-color:#79b63a;
 }
 
+.imageDiv-a{
+    width:"100%";
+    height:"40%" ;
+    position:"absolute";
+    top:"40%";
+  
+}
+.imageDiv-a>img{
+    position: relative;
+    left: 50%;
+}
+
 .footerBox-a{
     padding-left: 5%;
     padding-right: 5%;
@@ -76,6 +88,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2%;
+    align-items: center;
     gap: 10px;
 }
 .Pagination-a>button{
@@ -85,6 +98,7 @@
 background-color: red;
 color: white;
 }
+
 .Pagination-a>button:hover{
     background-color: brown;
     cursor: pointer;
