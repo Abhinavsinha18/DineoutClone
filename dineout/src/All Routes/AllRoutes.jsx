@@ -20,15 +20,12 @@ function AllRoutes() {
     hotelAdd: "",
   });
 
-
   return (
     <div>
-      
-
-      
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Product />} />
+        <Route path="/bookatable" element={<Product />} />
+
         <Route
           path="/checkout"
           element={<Checkout checkProps={checkProps} />}
@@ -40,9 +37,6 @@ function AllRoutes() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
       <GoToTop />
-
-
-  
     </div>
   );
 }
