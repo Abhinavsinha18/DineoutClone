@@ -6,6 +6,7 @@ import ProductDetails from "../Components/ProductDetail/ProductDetails";
 import GoToTop from "../Components/Home/GoToTop/GoToTop";
 import Blog from "../Components/Blog/Blog";
 import { useState } from "react";
+import Login from "../Components/LoginSignup/Login";
 
 function AllRoutes() {
   const [checkProps, setCheckProps] = useState({
@@ -19,15 +20,12 @@ function AllRoutes() {
     hotelAdd: "",
   });
 
-
   return (
     <div>
-      
-
-      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bookatable" element={<Product />} />
+
         <Route
           path="/checkout"
           element={<Checkout checkProps={checkProps} />}
@@ -39,9 +37,6 @@ function AllRoutes() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
       <GoToTop />
-
-
-  
     </div>
   );
 }
