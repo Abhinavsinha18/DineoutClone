@@ -10,12 +10,13 @@ import { useState } from 'react';
 function App() {
   
   const [isLogin,setIsLogin] = useState(true)
-  const [login,setLogin] = useState(false)
+  const [login,setLogin] = useState(true)
+  
   
   
   return (
     <div className="App">
-      <Navbar setLogin={setLogin} />
+      <Navbar setLogin={setLogin} login={login} />
       { login && (isLogin ? <Login setLogin={setLogin} setIsLogin={setIsLogin} /> : <Signup setIsLogin={setIsLogin} setLogin={setLogin}/>) }
       <AllRoutes />
     </div>

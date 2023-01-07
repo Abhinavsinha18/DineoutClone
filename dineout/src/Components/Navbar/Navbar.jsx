@@ -1,11 +1,16 @@
 import '../Navbar/Navbar.css';
+import React  from 'react';
 import { NavLink } from 'react-router-dom';
 import LoginButton from './LoginButton';
 import UserProfile from './UserProfile';
+import { useEffect } from 'react';
 function Navbar(props) {
-
+    const {setLogin,login}=props;
     var isAuth = localStorage.getItem('loginKey'); 
-    console.log(props)
+    console.log(login,setLogin)
+    useEffect(()=>{
+    },[])
+   console.log( 'login',props.login)
 
     return (
         <div className='navbar'>
@@ -35,9 +40,10 @@ function Navbar(props) {
                     isAuth ?
                         <UserProfile/>
                         :
-                        (<LoginButton setLogin={'setLogin'} />)
+                        (<LoginButton setLogin={props.setLogin} login={props.login} />)
                 }
             </div>
+            
         </div>
     )
 }

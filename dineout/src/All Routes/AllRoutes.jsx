@@ -6,6 +6,7 @@ import ProductDetails from "../Components/ProductDetail/ProductDetails";
 import GoToTop from "../Components/Home/GoToTop/GoToTop";
 import Blog from "../Components/Blog/Blog";
 import { useState } from "react";
+import Login from "../Components/LoginSignup/Login";
 
 function AllRoutes() {
   const [checkProps, setCheckProps] = useState({
@@ -27,6 +28,7 @@ function AllRoutes() {
       
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/login" element={<Login/>}/> */}
         <Route path="/products" element={<Product />} />
         <Route
           path="/checkout"
