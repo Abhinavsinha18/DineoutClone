@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
   height: 0px;
+  width: 0px;
 }
 
 .top-btn {

@@ -90,3 +90,21 @@
     width: 140px;
     height: 43px;
 }
+
+@media (max-width: 1024px) {
+    .search-bar-home {
+        width: 900px;
+    }
+    .search-bar-home input {
+        width: 750px;
+    }
+}
+
+@media (max-width: 700px) {
+    .search-bar-home {
+        width: 500px;
+    }
+    .search-bar-home input {
+        width: 400px;
+    }
+}
