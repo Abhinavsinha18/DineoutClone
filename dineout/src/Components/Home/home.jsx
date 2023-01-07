@@ -5,9 +5,29 @@ import Offers from "./Offers/offers";
 import SearchBar from "./searchbar/searcbar";
 import Navbar from '../Navbar/Navbar'
 import Footer from "../Footer/Footer";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
+
 function Home() {
+let imgGif = useRef(null);
+
+let ShowLogo = ()=>{
+   imgGif.current.innerText = "Book Now 🧭";
+
+}
+let RemoveLogo = ()=>{
+    imgGif.current.innerText = "HOLA 👋"
+ }
+
+
     return (
+        
         <div>
+           <div style={{position: "fixed",bottom: "5%",zIndex: "1",left: "2%",width:"10%",textAlign:"center"}} onMouseLeave={RemoveLogo} onMouseEnter={ShowLogo}>
+          <Link to={"/bookatable"} style={{textDecoration:"none"}}><p ref={imgGif} style={{color:"white",borderRadius:"20px",padding:"5px",top:"20px",position:"relative",backgroundColor:"orangered",width:"80%"}}>HOLA 👋</p></Link>
+          <img src="https://thumbs.gfycat.com/AcidicUnfoldedGoldenretriever-max-1mb.gif" alt="" width={"100%"}/>
+      </div>  
+           
             <Navbar/>
             <SearchBar />
             <Offers />
@@ -15,6 +35,7 @@ function Home() {
             <FeaturedRestaurants />
             <Feature />
             <Footer/>
+
         </div>
     )
 }

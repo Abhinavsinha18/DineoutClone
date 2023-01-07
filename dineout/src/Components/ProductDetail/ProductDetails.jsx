@@ -21,9 +21,10 @@ const ProductDetails = ({ e, setCheckProps }) => {
   let data = useSelector((store) => {
     return store.data;
   });
+  console.log(index);
 
-  // console.log("data:", data[index.e]);
   let obj = data[index.e];
+  console.log("data:", data[index.e]);
   const d = new Date();
   const weekDay = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
   const months = [
@@ -74,6 +75,11 @@ const ProductDetails = ({ e, setCheckProps }) => {
   const setTime = (e) => {
     // console.log(e);
     setGuestTime(e);
+    setShow({
+      showBreakfast: false,
+      showLunch: false,
+      showDinner: false,
+    });
   };
   return (
     <div className="container">
@@ -144,8 +150,22 @@ const ProductDetails = ({ e, setCheckProps }) => {
           </div>
           <div className="slot">
             <p>Time</p>
-            <p style={{ lineHeight: 0, fontSize: "13px", color: "#a1a1a1" }}>
-              Choose an available time slot
+            <p
+              style={{
+                fontSize: "13px",
+                color: "#a1a1a1",
+                display: "flex",
+                alignItems: "center",
+                gap: ".5rem",
+              }}
+            >
+              Choose an available time slot{" "}
+              <span
+                className="guestTime"
+                style={{ display: guestTime ? "block" : "none" }}
+              >
+                {guestTime}
+              </span>
             </p>
             <nav>
               <div
@@ -335,7 +355,10 @@ const ProductDetails = ({ e, setCheckProps }) => {
           </div>
           <div className="guestDetails">
             <p>Enter Guest Details</p>
-            <div className="guestCnt">
+            <div
+              className="guestCnt"
+              style={{ display: guestTime ? "flex" : "none" }}
+            >
               <span
                 style={{
                   fontSize: "13px",

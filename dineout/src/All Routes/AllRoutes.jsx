@@ -28,7 +28,6 @@ function AllRoutes() {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/login" element={<Login/>}/> */}
         <Route path="/products" element={<Product />} />
         <Route
           path="/checkout"
@@ -41,6 +40,9 @@ function AllRoutes() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
       <GoToTop />
+
+
+  
     </div>
   );
 }

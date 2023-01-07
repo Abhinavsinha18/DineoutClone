@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 const DivProduct = ({e}) => {
+let image = useRef(null);
+  const hover=()=>{
+image.current.style.height="185px";
+}
+
+const hoverOver =()=>{
+  
+  image.current.style.height="170px";
+  }
+
   return (
-    <div className='boxDesign-a'>
+    <div className='boxDesign-a' onMouseEnter={hover} onMouseLeave={hoverOver}>
         <header>
-            <img src={e.image} alt="" width={"100%"} height="170px"/>
+            <img src={e.image} ref={image} alt="" width={"100%"} height="170px"/>
         </header>
         <footer className='footerBox-a'>
     <h3>{e.name}</h3>
@@ -15,7 +25,7 @@ const DivProduct = ({e}) => {
        </div>
 
        <div>
-        <span>{e.discription1} | </span>
+        <span>₹ {e.discription1} for 2 (approx)| </span>
         <span>{e.discription2} | </span>
         <span>{e.discription3} | </span>
         <span>{e.category} </span>
