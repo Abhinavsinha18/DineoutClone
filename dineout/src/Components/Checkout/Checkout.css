@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #d6d6d6;
   height: 100vh;
 }
 .main {
@@ -10,6 +9,9 @@
   display: flex;
   flex-direction: column;
   background: #fff;
+  border-radius: 1rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .main > div {
   border-bottom: 4px solid #d6d6d6;
@@ -39,4 +41,8 @@
 .middle .lower .right,
 .bottom .lower .right {
   text-align: right;
+}
+
+.top {
+  text-align: center;
 }

@@ -7,8 +7,11 @@ import getDirection from "./assets/path.webp";
 import calender from "./assets/calendar-img.webp";
 import left_arrow from "./assets/left_arrow.png";
 import right_arrow from "./assets/right_arrow.png";
+import { Link } from "react-router-dom";
+import add from "./assets/add.png";
+import minus from "./assets/minus.png";
 
-const ProductDetails = ({ e }) => {
+const ProductDetails = ({ e, setCheckProps }) => {
   const [show, setShow] = useState({
     showBreakfast: false,
     showLunch: false,
@@ -18,6 +21,7 @@ const ProductDetails = ({ e }) => {
   let data = useSelector((store) => {
     return store.data;
   });
+
   // console.log("data:", data[index.e]);
   let obj = data[index.e];
   const d = new Date();
@@ -41,6 +45,36 @@ const ProductDetails = ({ e }) => {
   const date = d.getDate();
   const year = d.getFullYear();
   // console.log(year);
+  const [selectedDate, setSelectedDate] = useState(date);
+  const [guestName, setGuestName] = useState("");
+  const [guestCount, setGuestCount] = useState(0);
+  const [guestTime, setGuestTime] = useState(null);
+  const [mobile, setMobile] = useState(null);
+  console.log("name:", guestName);
+  const setProps = () => {
+    setCheckProps({
+      name: guestName,
+      date: selectedDate,
+      month: month,
+      time: guestTime,
+      guests: guestCount,
+      mobile: mobile,
+      hotelName: obj.name,
+      hotelAdd:
+        obj.discription2 +
+        " " +
+        obj.discription3 +
+        " " +
+        obj.discription4 +
+        " " +
+        obj.discription5,
+    });
+  };
+
+  const setTime = (e) => {
+    // console.log(e);
+    setGuestTime(e);
+  };
   return (
     <div className="container">
       <div className="left">
@@ -84,7 +118,7 @@ const ProductDetails = ({ e }) => {
               </span>
               <img className="leftarrow" src={left_arrow} alt="" />
               <ul className="day">
-                <li key={50}>
+                <li key={50} onClick={() => setSelectedDate(date)}>
                   <div className="name">{day}</div>
                   <div className="dating">{date}</div>
                 </li>
@@ -92,7 +126,7 @@ const ProductDetails = ({ e }) => {
                   if (day === e) {
                     return (
                       <>
-                        <li key={i}>
+                        <li key={i} onClick={() => setSelectedDate(date + 1)}>
                           <div className="name">
                             {i + 1 === weekDay.length
                               ? weekDay[0]
@@ -169,65 +203,188 @@ const ProductDetails = ({ e }) => {
                 className="forBreakfast"
                 style={{ display: show.showBreakfast ? "grid" : "none" }}
               >
-                <span className="theTime">10:30 AM</span>
-                <span className="theTime">10:45 AM</span>
-                <span className="theTime">11:00 AM</span>
-                <span className="theTime">11:15 AM</span>
-                <span className="theTime">11:30 AM</span>
-                <span className="theTime">11:45 AM</span>
+                <span className="theTime" onClick={() => setTime("10:30 AM")}>
+                  10:30 AM
+                </span>
+                <span className="theTime" onClick={() => setTime("10:45 AM")}>
+                  10:45 AM
+                </span>
+                <span className="theTime" onClick={() => setTime("11:00 AM")}>
+                  11:00 AM
+                </span>
+                <span className="theTime" onClick={() => setTime("11:15 AM")}>
+                  11:15 AM
+                </span>
+                <span className="theTime" onClick={() => setTime("11:30 AM")}>
+                  11:30 AM
+                </span>
+                <span className="theTime" onClick={() => setTime("11:45 AM")}>
+                  11:45 AM
+                </span>
               </div>
               <div
                 className="lunch"
                 style={{ display: show.showLunch ? "grid" : "none" }}
               >
-                <span className="theTime">12:00 PM</span>
-                <span className="theTime">12:15 PM</span>
-                <span className="theTime">12:30 PM</span>
-                <span className="theTime">12:45 PM</span>
-                <span className="theTime">1:00 PM</span>
-                <span className="theTime">1:15 PM</span>
-                <span className="theTime">1:30 PM</span>
-                <span className="theTime">1:45 PM</span>
-                <span className="theTime">2:00 PM</span>
-                <span className="theTime">2:15 PM</span>
-                <span className="theTime">2:30 PM</span>
-                <span className="theTime">2:45 PM</span>
-                <span className="theTime">3:00 PM</span>
-                <span className="theTime">3:15 PM</span>
-                <span className="theTime">3:30 PM</span>
-                <span className="theTime">3:45 PM</span>
-                <span className="theTime">4:00 PM</span>
-                <span className="theTime">4:15 PM</span>
-                <span className="theTime">4:30 PM</span>
-                <span className="theTime">4:45 PM</span>
+                <span className="theTime" onClick={() => setTime("12:00 PM")}>
+                  12:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("12:15 PM")}>
+                  12:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("12:30 PM")}>
+                  12:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("12:45 PM")}>
+                  12:45 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("1:00 PM")}>
+                  1:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("1:15 PM")}>
+                  1:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("1:30 PM")}>
+                  1:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("1:45 PM")}>
+                  1:45 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("2:00 PM")}>
+                  2:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("2:15 PM")}>
+                  2:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("2:30 PM")}>
+                  2:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("2:45 PM")}>
+                  2:45 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("3:00 PM")}>
+                  3:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("3:15 PM")}>
+                  3:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("3:30 PM")}>
+                  3:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("3:45 PM")}>
+                  3:45 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("4:00 PM")}>
+                  4:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("4:15 PM")}>
+                  4:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("4:30 PM")}>
+                  4:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("4:45 PM")}>
+                  4:45 PM
+                </span>
               </div>
               <div
                 className="dinner"
                 style={{ display: show.showDinner ? "grid" : "none" }}
               >
-                <span className="theTime">5:00 PM</span>
-                <span className="theTime">5:15 PM</span>
-                <span className="theTime">5:30 PM</span>
-                <span className="theTime">5:45 PM</span>
-                <span className="theTime">6:00 PM</span>
-                <span className="theTime">6:15 PM</span>
-                <span className="theTime">6:30 PM</span>
-                <span className="theTime">6:45 PM</span>
-                <span className="theTime">7:00 PM</span>
-                <span className="theTime">7:15 PM</span>
-                <span className="theTime">7:30 PM</span>
-                <span className="theTime">7:45 PM</span>
-                <span className="theTime">8:00 PM</span>
+                <span className="theTime" onClick={() => setTime("5:00 PM")}>
+                  5:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("5:15 PM")}>
+                  5:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("5:30 PM")}>
+                  5:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("5:45 PM")}>
+                  5:45 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("6:00 PM")}>
+                  6:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("6:15 PM")}>
+                  6:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("6:30 PM")}>
+                  6:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("6:45 PM")}>
+                  6:45 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("7:00 PM")}>
+                  7:00 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("7:15 PM")}>
+                  7:15 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("7:30 PM")}>
+                  7:30 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("7:45 PM")}>
+                  7:45 PM
+                </span>
+                <span className="theTime" onClick={() => setTime("8:00 PM")}>
+                  8:00 PM
+                </span>
               </div>
             </div>
           </div>
           <div className="guestDetails">
             <p>Enter Guest Details</p>
+            <div className="guestCnt">
+              <span
+                style={{
+                  fontSize: "13px",
+                  color: "#a1a1a1",
+                }}
+              >
+                Guest
+              </span>
+              <img
+                src={add}
+                alt=""
+                onClick={() => {
+                  setGuestCount(guestCount + 1);
+                }}
+              />
+              <span>{guestCount}</span>
+              <img
+                src={minus}
+                alt=""
+                onClick={() => {
+                  if (guestCount !== 0) {
+                    setGuestCount(guestCount - 1);
+                  }
+                }}
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="Enter Name..."
+              onChange={(e) => setGuestName(e.target.value)}
+            />
+            <input
+              type="number"
+              placeholder="Enter Mobile no..."
+              onChange={(e) => setMobile(e.target.value)}
+            />
           </div>
         </div>
-        <div className="checkout">
-          <button className="checkBtn">Continue</button>
-        </div>
+        {guestCount > 0 ? (
+          <div className="checkout">
+            <Link to="/checkout">
+              <button className="checkBtn" onClick={setProps}>
+                Continue
+              </button>
+            </Link>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

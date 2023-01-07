@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-top: 4rem;
+  margin-top: 27rem;
   position: relative;
 }
 
@@ -16,6 +16,8 @@
   flex-direction: column;
   background: #fff;
   border-radius: 0.5rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .container .left .hotel .upper img {
@@ -92,14 +94,14 @@
   position: fixed;
   right: 5rem;
   top: 12rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .container .proceed .select {
   overflow-y: auto;
 }
-::-webkit-scrollbar {
-  display: none;
-}
+
 .proceed .heading {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -240,4 +242,29 @@
 }
 .checkBtn:hover {
   background: rgb(235, 93, 27);
+}
+
+.guestDetails input {
+  width: 80%;
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #3595ff;
+  border-radius: 0.5rem;
+  font-weight: 650;
+}
+.guestCnt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 700;
+  color: #3595ff;
+}
+.guestCnt img {
+  width: 2rem;
+  cursor: pointer;
 }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Checkout.css";
 
-const Checkout = () => {
+const Checkout = ({ checkProps }) => {
+  console.log(checkProps);
   const [tableStatus, setTableStatus] = useState(false);
   setTimeout(() => {
     setTableStatus(true);
@@ -10,8 +11,8 @@ const Checkout = () => {
     <div className="container">
       <div className="main">
         <div className="top">
-          <h1>Hotel Name</h1>
-          <h3>some address for the hotel mentioned above</h3>
+          <h1>{checkProps.hotelName}</h1>
+          <h3>{checkProps.hotelAdd}</h3>
         </div>
         <hr />
         <div className="middle">
@@ -24,8 +25,8 @@ const Checkout = () => {
               <h5>Phone no.:</h5>
             </div>
             <div className="right">
-              <h5>The guest name </h5>
-              <h5>1234567890</h5>
+              <h5>{checkProps.name} </h5>
+              <h5>{checkProps.mobile}</h5>
             </div>
           </div>
         </div>
@@ -51,10 +52,16 @@ const Checkout = () => {
                     : "Wait! While we are confirming your seat."}
                 </span>
               </h5>
-              <h5>.......</h5>
-              <h5>...........</h5>
-              <h5>........</h5>
-              <h5>..........</h5>
+              <h5>
+                {checkProps.date +
+                  " " +
+                  checkProps.month +
+                  " | " +
+                  checkProps.time}
+              </h5>
+              <h5>{checkProps.guests}</h5>
+              <h5>{checkProps.name}</h5>
+              <h5>39406619</h5>
             </div>
           </div>
         </div>
