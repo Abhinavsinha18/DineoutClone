@@ -83,7 +83,7 @@ const ProductBox = ({ state, setState,arr ,setLimit}) => {
       </nav>
 
       <div className="a-gridBox">
-        {state.length==0 ? <div style={{width:"34%" ,position:"absolute",top:"30%", left:"45%"}}><img src="https://q5n8c8q9.rocketcdn.me/wp-content/uploads/2020/04/Lyft.gif" width={"100%"} height="400px" alt="imgdta"/></div>   : state.map((e, i) => (
+        {state.length==0 ? <div style={{}} className="imageDiv-a"><img src="https://media.tenor.com/unvXyxtdn3oAAAAC/no-result.gif" width={"100%"} height="100%" alt="imgdta"/></div>   : state.map((e, i) => (
           <Link
             to={`/products/${i}`}
             style={{ textDecoration: "none" }}
@@ -105,7 +105,7 @@ const ProductBox = ({ state, setState,arr ,setLimit}) => {
           <option value="15">15</option>
           <option value="20">20</option>
           <option value="25">25</option>
-        </select> <span >- Page Limit.. </span>
+        </select> <span className="page-limit-p">- Page Limit.. </span>
       </div>
     </div>
   );
