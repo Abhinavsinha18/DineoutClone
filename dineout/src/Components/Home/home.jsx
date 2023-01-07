@@ -31,7 +31,7 @@ let RemoveLogo = ()=>{
           <img src="https://thumbs.gfycat.com/AcidicUnfoldedGoldenretriever-max-1mb.gif" alt="" width={"100%"}/>
       </div>  
            
-            <Navbar/>
+            {/* <Navbar/> */}
             <SearchBar />
             <Offers />
             <NearRestaurants />

@@ -4,7 +4,7 @@
 
 
 .restaurant-cover-div {
-    width: 266px;
+    width: 90%;
     height: 138px;
     border-bottom: 2px solid #ff654a;
     overflow: hidden;
@@ -25,7 +25,7 @@
 
 .restaurant-info {
     display: flex;
-    width: 266px;
+    width: 90%;
     justify-content: space-between;
     font-family: "Metropolis",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
