@@ -2,8 +2,11 @@ import '../Navbar/Navbar.css';
 import { NavLink } from 'react-router-dom';
 import LoginButton from './LoginButton';
 import UserProfile from './UserProfile';
-function Navbar() {
-    var isAuth = localStorage.getItem('loginKey');    
+function Navbar(props) {
+
+    var isAuth = localStorage.getItem('loginKey'); 
+    console.log(props)
+
     return (
         <div className='navbar'>
             <div className='navrootdiv'>
@@ -32,7 +35,7 @@ function Navbar() {
                     isAuth ?
                         <UserProfile/>
                         :
-                        <LoginButton />
+                        (<LoginButton setLogin={'setLogin'} />)
                 }
             </div>
         </div>

@@ -1,8 +1,10 @@
 
-function LoginButton() {
+function LoginButton({setLogin}) {
     const hanldeSubmit = (event) => {
-        localStorage.setItem('loginKey', true);
-        window.location.reload(true);
+        // setLogin(true)
+        console.log(setLogin)
+        // localStorage.setItem('loginKey', true);
+        // window.location.reload(true);
     };
     return (
         <div >
