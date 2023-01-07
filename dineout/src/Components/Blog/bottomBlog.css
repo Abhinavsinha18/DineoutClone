@@ -75,3 +75,9 @@
     font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
+
+@media (max-width: 900px) {
+    .blog-bottom-side-section {
+        display: none;
+    }
+}
