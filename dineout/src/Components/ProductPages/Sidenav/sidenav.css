@@ -54,3 +54,10 @@ font-size: 12px;
 .accord{
     cursor: pointer;
 }
+
+.hamburger-menu{
+    display: none;
+}
+.mobile-menu{
+    background-color: whitesmoke;
+}

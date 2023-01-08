@@ -17,7 +17,7 @@
         height:"40%" ;
         position:"absolute";
         top:"40%";
-         /* left:"10%"; */
+        
     }
 }
 
@@ -25,6 +25,24 @@
 .a-sidenav-container{
 display: none;
 }
+.hamburger-menu{
+    display: block;
+    font-size: 1rem;
+  
+    width: 80%;
+   
+    position: absolute;
+    left: 3%;
+    top: 17%;
+}
+.mobile-menu{
+    position: fixed;
+    background-color: white;
+    left: 8%;
+    top: 11%;
+    z-index: 99;
+}
+
 .a-productBox-container{
     width: 100%;
 }
@@ -84,8 +102,8 @@ font-size: 14px;
     height: 30px;
         text-align: center;
         border-radius: 10px;
-        background-color: brown;
-        color: white;
+        background-color: white;
+        color: red;
     }
 }
 
@@ -101,8 +119,8 @@ font-size: 14px;
     height: 30px;
         text-align: center;
         border-radius: 10px;
-        background-color: brown;
-        color: white;
+        background-color: white;
+        color: red;
     }
     .page-limit-p{
         font-size: 10px;
@@ -113,8 +131,8 @@ font-size: 14px;
     height: 30px;
         text-align: center;
         border-radius: 10px;
-        background-color: brown;
-        color: white;
+        background-color: white;
+        color: red;
     }
     .a-productBox-nav>div>h2{
         font-size: 12px;

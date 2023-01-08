@@ -10,11 +10,15 @@ import {
   } from '@chakra-ui/react'
 import store from "../../../Store"
 import { useSelector } from 'react-redux';
+import { useToast } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import {GiHamburgerMenu} from "react-icons/gi"
 
 
 const Sidenav = ({state,setState,page,filtercheck}) => {
   
 let [dataFch,setFch] = useState([]);
+let [ham , setHam] = useState(true);
 
 
 
@@ -67,6 +71,7 @@ let [dataFch,setFch] = useState([]);
 
   const FilterProduct =(e)=>{
     // setState(data);
+    let toast = useToast();
     let temPdata = data;
 
     temPdata = temPdata.filter((item)=>{
@@ -75,12 +80,19 @@ let [dataFch,setFch] = useState([]);
       }
     })
     setState(temPdata)
-    console.log(temPdata);
+
+
+    toast({
+      title: `Filter Success`
+     
+    })
+    // console.log(temPdata);
   }
   
   return (
+    <>
     
-    <div className='a-sidenav-container'>
+    <div className= {ham ? 'a-sidenav-container mobile-menu' : "mobile-menu"}>
 
 <div>
 <Accordion defaultIndex={[2,1,0]} allowMultiple pl={10} >
@@ -200,6 +212,22 @@ let [dataFch,setFch] = useState([]);
   <p>Top 10 Resturent in Delhi</p>
 </div>
     </div>
+
+
+{/* ___________________Hamburger -mobile menu__________________ */}
+
+<div className='hamburger-menu'>
+<Link to="" onClick={()=>{
+  if(ham){
+    setHam(false)
+  }else{
+    setHam(true)
+  }
+}}> <GiHamburgerMenu/></Link>
+</div>
+
+
+          </>
   )
 }
 
