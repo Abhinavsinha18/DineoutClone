@@ -129,7 +129,7 @@ function FeaturedRestaurants() {
             <div className="width">
                 <div className="near-title-bar">
                     <h2>Featured Restaurant</h2>
-                    <Link to="/products"><p>See All</p></Link>
+                    <Link to="/bookatable"><p>See All</p></Link>
                 </div>
                 <Slider {...settings}>
                     {featuredRestaurant.map((elem) => {
