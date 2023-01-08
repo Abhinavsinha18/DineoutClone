@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import store from "../../Store";
@@ -17,14 +17,31 @@ const ProductDetails = ({ e, setCheckProps }) => {
     showLunch: false,
     showDinner: false,
   });
+  const [obj, setObj] = useState({});
   let index = useParams();
-  let data = useSelector((store) => {
-    return store.data;
-  });
-  console.log(index);
+  index = parseInt(index.id);
+  // let data = useSelector((store) => {
+  //   return store.products;
+  // });
+  const fetchData = async () => {
+    let res = await fetch(`https://dineoutclone-foc1.onrender.com/products`);
+    let item = await res.json();
+    // console.log("item: ", item);
+    item.filter((e) => {
+      if (e.id === index) {
+        console.log(e);
+        setObj(e);
+      }
+    });
+    // setData(item);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  // console.log(data);
 
-  let obj = data[index.e];
-  console.log("data:", data[index.e]);
+  // let obj = data[0];
+  // console.log("data:", data[index.e]);
   const d = new Date();
   const weekDay = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
   const months = [
@@ -51,7 +68,7 @@ const ProductDetails = ({ e, setCheckProps }) => {
   const [guestCount, setGuestCount] = useState(0);
   const [guestTime, setGuestTime] = useState(null);
   const [mobile, setMobile] = useState(null);
-  console.log("name:", guestName);
+  // console.log("name:", guestName);
   const setProps = () => {
     setCheckProps({
       name: guestName,
