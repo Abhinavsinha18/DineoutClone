@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar'
 import Footer from "../Footer/Footer";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import ImgSlider from "./ImgSlider/ImgSlider";
 
 function Home() {
 let imgGif = useRef(null);
@@ -34,6 +35,7 @@ let RemoveLogo = ()=>{
             {/* <Navbar/> */}
             <SearchBar />
             <Offers />
+            <ImgSlider />
             <NearRestaurants />
             <FeaturedRestaurants />
             <Feature />
