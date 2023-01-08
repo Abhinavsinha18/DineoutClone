@@ -1,0 +1,208 @@
+.nav {
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* text-align: center; */
+  padding: 1rem;
+  background: #fff;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  z-index: 100;
+  top: 0;
+  padding-left: 0;
+}
+.secondNav {
+  top: 4.7rem;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #fff;
+  z-index: 100;
+  justify-content: center;
+  box-shadow: 2px 4px 5px 0 rgb(204 199 198 / 40%);
+}
+
+.leftNav {
+  /* position: relative;*/
+  /* left: 0; */
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.leftNav img {
+  width: 6.5rem;
+}
+.navDropMenu {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.navDropMenu img {
+  width: 1.2rem;
+}
+
+.navDropMenu select {
+  font-weight: 800;
+  color: #636363;
+  box-shadow: 2px 4px 5px 0 rgb(204 199 198 / 40%);
+  outline: none;
+}
+
+.centerNav .navigations,
+.secondNav .navigations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.navigations .navlink {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #636363;
+  padding-top: 1.5rem;
+  position: relative;
+  top: -1rem;
+  /* border-top: 1px solid black; */
+  /* text-decoration: overline; */
+}
+
+.centerNav > .navigations > .curr,
+.navlink:hover {
+  font-weight: 700;
+  color: coral;
+  border-top: 3px solid coral;
+}
+
+.rightNav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.rightNav .button .loginBtn {
+  width: 9rem;
+  padding: 0.8rem;
+  border: none;
+  background: #ff645a;
+  color: #fff;
+  /* font-size: 18px; */
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: 0.7s;
+  box-shadow: 0 0 6px coral;
+}
+.rightNav .button .loginBtn:hover {
+  background: #ff3021;
+}
+
+.searchdiv {
+  background-color: #ffff;
+  font-family: "Metropolis", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  width: 30rem;
+  height: 45px;
+  padding: 0px 10px 0px 15px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 5px 0 rgb(204 199 198 / 40%);
+  border-radius: 5px;
+}
+
+.searchdiv .searchbox {
+  border-radius: 5px;
+  background: #fff;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  height: 38px;
+  width: 100%;
+  margin: 0px 20px 0px 10px;
+  position: relative;
+  border: none;
+  font-size: 18px;
+}
+
+.searchbox:focus,
+.searchbox:active {
+  outline: none;
+}
+
+.searchicon {
+  width: 3rem;
+  color: #ff645a;
+}
+.searchdiv .searchBtn {
+  width: 6rem;
+  padding: 0.5rem;
+  border: none;
+  background: #ff645a;
+  color: #fff;
+  /* font-size: 18px; */
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: 0.7s;
+  box-shadow: 0 0 6px coral;
+}
+.searchdiv .searchBtn:hover {
+  background: #ff3021;
+}
+
+.forSmallScreen img {
+  width: 2rem;
+  cursor: pointer;
+}
+.menubtn {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .navDropMenu {
+    display: none;
+    position: relative;
+    right: 2rem;
+  }
+}
+@media (max-width: 770px) {
+  .menubtn {
+    display: block;
+  }
+  .secondNav,
+  .centerNav {
+    display: none;
+  }
+  .menu {
+    position: relative;
+    right: 1.2rem;
+  }
+}
+
+.menu {
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 1;
+  border-radius: 5px;
+}
+.menu a {
+  border-radius: 5px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.menu a:hover {
+  background-color: #ddd;
+}
