@@ -22,6 +22,8 @@ const offers = [
 function Offers() {
     return (
         <div className="best-offers">
+
+            
             <div className="best-offers-section">
                 <div className="best-offers-section-div">
                     <h2>Best Offers</h2>
@@ -36,6 +38,9 @@ function Offers() {
                     </div>
                 </div>
             </div>
+
+
+
             <div className="get-app-section">
                 <h1>Download the Dineout App</h1>
                 <h4>Book a Table</h4>

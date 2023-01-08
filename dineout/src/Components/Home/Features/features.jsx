@@ -45,7 +45,7 @@ const features = [
 
 function Feature() {
     return (
-        <div>
+        <div style={{margin:"auto"}}>
             <div className="features-section">
                 {features.map((elem, i) => {
                     return (

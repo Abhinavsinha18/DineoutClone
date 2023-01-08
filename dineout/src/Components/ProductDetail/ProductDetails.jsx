@@ -29,7 +29,7 @@ const ProductDetails = ({ e, setCheckProps }) => {
     // console.log("item: ", item);
     item.filter((e) => {
       if (e.id === index) {
-        console.log(e);
+        // console.log(e);
         setObj(e);
       }
     });
