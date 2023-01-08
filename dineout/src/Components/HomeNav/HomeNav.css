@@ -1,20 +1,34 @@
 .nav {
-  width: 100%;
+  width: 100vw;
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   /* text-align: center; */
   padding: 1rem;
   background: #fff;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  z-index: 1;
+  z-index: 100;
+  top: 0;
+  padding-left: 0;
+}
+.secondNav {
+  top: 4.7rem;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #fff;
+  z-index: 100;
+  justify-content: center;
+  box-shadow: 2px 4px 5px 0 rgb(204 199 198 / 40%);
 }
 
 .leftNav {
-  /* position: relative;
-  left: 13rem; */
+  /* position: relative;*/
+  /* left: 0; */
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -38,7 +52,8 @@
   outline: none;
 }
 
-.centerNav .navigations {
+.centerNav .navigations,
+.secondNav .navigations {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -67,11 +82,13 @@
 .rightNav {
   display: flex;
   flex-direction: row;
+  gap: 1rem;
+  align-items: center;
 }
 
 .rightNav .button .loginBtn {
-  width: 10rem;
-  padding: 1rem;
+  width: 9rem;
+  padding: 0.8rem;
   border: none;
   background: #ff645a;
   color: #fff;
@@ -140,4 +157,52 @@
 }
 .searchdiv .searchBtn:hover {
   background: #ff3021;
+}
+
+.forSmallScreen img {
+  width: 2rem;
+  cursor: pointer;
+}
+.menubtn {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .navDropMenu {
+    display: none;
+    position: relative;
+    right: 2rem;
+  }
+}
+@media (max-width: 770px) {
+  .menubtn {
+    display: block;
+  }
+  .secondNav,
+  .centerNav {
+    display: none;
+  }
+  .menu {
+    position: relative;
+    right: 1.2rem;
+  }
+}
+
+.menu {
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 1;
+  border-radius: 5px;
+}
+.menu a {
+  border-radius: 5px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.menu a:hover {
+  background-color: #ddd;
 }
