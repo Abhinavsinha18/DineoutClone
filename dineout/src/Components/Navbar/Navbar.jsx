@@ -1,7 +1,7 @@
 import "../Navbar/Navbar.css";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import LoginButton from "./LoginButton";
+// import LoginButton from "./LoginButton";
 import UserProfile from "./UserProfile";
 import { useEffect } from "react";
 function Navbar(props) {
@@ -56,11 +56,12 @@ function Navbar(props) {
             Blog
           </NavLink>
         </div>
-        {isAuth ? (
+        <button style={{background:"tomato",color:"white",width:"110px",borderRadius:"4px",border:"none",fontSize:"medium",alignItem:"center",marginRight:"10px"}} id="loginbtn">Login</button>
+        {/* {isAuth ? (
           <UserProfile />
         ) : (
           <LoginButton setLogin={setLogin} login={login} />
-        )}
+        )} */}
       </div>
     </div>
   );

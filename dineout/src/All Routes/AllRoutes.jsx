@@ -31,7 +31,7 @@ function AllRoutes() {
           element={<Checkout checkProps={checkProps} />}
         />
         <Route
-          path="/products/:e"
+          path="/bookatable/:id"
           element={<ProductDetails setCheckProps={setCheckProps} />}
         />
         <Route path="/blog" element={<Blog />} />
