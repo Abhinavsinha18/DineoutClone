@@ -23,6 +23,9 @@
     border: 1px solid #FF645A;
     background-color: #FF645A;
 }
+.social-section {
+    text-align: center;
+}
 .social{
     margin: auto;
     width: 150px;

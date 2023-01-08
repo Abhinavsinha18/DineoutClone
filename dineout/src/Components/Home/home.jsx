@@ -39,7 +39,7 @@ let RemoveLogo = ()=>{
             <NearRestaurants />
             <FeaturedRestaurants />
             <Feature />
-            {/* <Footer/> */}
+            <Footer/>
 
         </div>
     )
