@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navbar setLogin={setLogin} login={login} /> */}
+      <Navbar setLogin={setLogin} login={login} />
       {login &&
         (isLogin ? (
           <Login setLogin={setLogin} setIsLogin={setIsLogin} />
