@@ -2,6 +2,11 @@
 function LoginButton({setLogin,login}) {
     const hanldeSubmit = (event) => {
         console.log('loginHere:',login)
+        // setLogin(true)
+console.log(setLogin)
+// localStorage.setItem('loginKey', true);
+// window.location.reload(true);
+setLogin(!login);
     };
     return (
         <div >

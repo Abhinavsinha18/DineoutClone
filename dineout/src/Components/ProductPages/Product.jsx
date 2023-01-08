@@ -4,7 +4,8 @@ import { useDispatch} from 'react-redux';
 import ProductAction from './StoreContent/ProductAction';
 import ProductBox from './Products/ProductBox'
 import Sidenav from './Sidenav/Sidenav';
-import "./product.css"
+import "./product.css";
+import { useToast } from '@chakra-ui/react';
 
 const Product = () => {
   let [state,setState]= useState([]);
@@ -35,34 +36,53 @@ const Product = () => {
   let dispatch = useDispatch();
   useEffect(()=>{
     let res = "Dineout Pay"
-filtercheck(res)
-fetchhh();
-   },[page,limit])
-
-   const filtercheck = async (val)=>{
+    filtercheck(res)
+    fetchhh();
+  },[page,limit])
+  
+  
+  
+  let toast = useToast();
+  
+   const filtercheck =  (val)=>{
     if(val === "Dineout Pay"){
-     await fetch(`https://dineoutclone-foc1.onrender.com/products?&_page=${page.no}&_limit=${limit}`)
+      fetch(`https://dineoutclone-foc1.onrender.com/products?&_page=${page.no}&_limit=${limit}`)
       .then((res)=>res.json())
       .then((d)=>{
-        console.log(d);
+        // console.log(d);
        setState(d);
       })
     }else if( val.target.checked === true && val.target.value==="Cafe" ||val.target.value==="Breakfast" ||val.target.value==="Bakery" ){
-      await  fetch(`https://dineoutclone-foc1.onrender.com/products?tags=${val.target.value}&_page=${page.no}&_limit=${limit}`)
+        fetch(`https://dineoutclone-foc1.onrender.com/products?tags=${val.target.value}&_page=${page.no}&_limit=${limit}`)
       .then((res)=>res.json())
       .then((d)=>{
        setState(d);
+       toast({
+        title: `Filtered`,
+        position: 'bottom',
+        isClosable: true,
       })
+      })
+     
     }
    else if(val.target.checked){
-    await  fetch(`https://dineoutclone-foc1.onrender.com/products?category=${val.target.value}&_page=${page.no}&_limit=${limit}`)
+      fetch(`https://dineoutclone-foc1.onrender.com/products?category=${val.target.value}&_page=${page.no}&_limit=${limit}`)
       .then((res)=>res.json())
       .then((d)=>{
        setState(d);
+       toast({
+        title: `Filtered`,
+        position: 'bottom',
+        isClosable: true,
       })
+      })
+      
     }
    
-   
+    // toast({
+    //   title: `Filter Success`,
+    //   isClosable: true,
+    // })
    
    }
 

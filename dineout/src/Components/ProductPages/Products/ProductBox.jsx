@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import "./productBox.css";
 import DivProduct from "./DivProduct";
 import { Link } from "react-router-dom";
+import { useToast } from "@chakra-ui/react";
 
 const ProductBox = ({ state, setState,arr ,setLimit}) => {
   let seletref = useRef(null);
@@ -9,7 +10,7 @@ const ProductBox = ({ state, setState,arr ,setLimit}) => {
   
   // console.log(state);
 
-
+let toast = useToast();
 
  
 
@@ -57,7 +58,11 @@ const ProductBox = ({ state, setState,arr ,setLimit}) => {
       });
       setRefresh((pre)=>pre+1);
     }
-    
+    toast({
+      title: `Sort Success`,
+      position: 'top',
+      isClosable: true,
+    })
 
 
   };
