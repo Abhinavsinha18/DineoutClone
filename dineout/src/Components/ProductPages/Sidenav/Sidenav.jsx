@@ -28,43 +28,42 @@ let [ham , setHam] = useState(true);
     let inp4 = useRef(null);
     let inp5 = useRef(null);
 
-  let [checkboxProduct, setCheckboxProduct] = useState([
-  {
-    "name" : "Pure Veg",
-    "checked" : false,
-    "ref":inp2
-    },
-    {
-      "name" : "5 Star",
-      "checked" : false,
-      "ref":inp3
-      },
-      {
-        "name" : "Buffet",
-        "checked" : false,
-        "ref":inp4
-        },
-        {
-          "name" : "Dineout Pay",
-          "checked" : false,
-          "ref":inp1
-          },
-        {
-          "name" : "Fast Food",
-          "checked" : false,
-          "ref":inp5
-          },
+    let arr1 = ["Pure Veg","5 Star", "Buffet","Dineout Pay","Fast Food"];
+  let [checkboxProduct, setCheckboxProduct] = useState(arr1)
+  
+let arr2 = ["North Indian","Fast Food","Chinese","Desserts"]
+let arr3 = ["Card Accepted","Wallet Accepted","Home Delivery","Air Conditioned"];
+let arr4 = ["Cafe","Breakfast","Bakery","Asian"];
 
-])
+let [checkboxProduct2 , setCheckboxProduct2] = useState(arr2)
+let [checkboxProduct4 , setCheckboxProduct4] = useState(arr4)
+let [checkboxProduct3 , setCheckboxProduct3] = useState(arr3)
 
   let data = useSelector((store)=>store.data);
   // console.log(data);
 
-  const checkboxProduct2 = ["North Indian","Fast Food","Chinese","Desserts"];
-  const checkboxProduct3 = ["Cafe","Breakfast","Bakery","Asian"];
-  const checkboxProduct4 = ["Card Accepted","Wallet Accepted","Home Delivery","Air Conditioned"];
+ 
+  
+
+let [deb,setDeb] = useState([]);
+
+  const debouncing =(e,arr,setArr)=>{
+console.log(e.target.value)
+
+let temp = arr.filter((el)=>{
+    // console.log(el)
+return el.toLowerCase().includes(e.target.value.toLowerCase());
 
 
+})
+if(temp.length==0){
+  setArr(arr)
+}
+else{
+  setArr(temp);
+}
+
+}
 
 
 
@@ -108,13 +107,13 @@ let [ham , setHam] = useState(true);
     <AccordionPanel pb={0} mt={-5}>
         <div className='a-sidebar-detail'>
       <div>
-        <input type="text" className='sidenav-inp'   placeholder='Search'/>
+        <input type="text" className='sidenav-inp'  onChange={(e)=>debouncing(e,arr1,setCheckboxProduct)} placeholder='Search'/>
       </div>
 
 
       {checkboxProduct.map((item,i)=>{
         return <div  key={i+1}>
-        <input type="checkbox"  value={item.name} ref={item.ref} onChange={(e)=>filtercheck(e)}/> <span>{item.name}</span>
+        <input type="checkbox"  value={item}  onChange={(e)=>filtercheck(e)}/> <span>{item}</span>
        </div>
       })}
     
@@ -136,7 +135,7 @@ let [ham , setHam] = useState(true);
     <AccordionPanel pb={0} mt={-5}>
         <div className='a-sidebar-detail'>
       <div>
-        <input type="text" className='sidenav-inp' placeholder='Search for Cuisines'/>
+        <input type="text" className='sidenav-inp' onChange={(e)=>debouncing(e,arr2,setCheckboxProduct2)} placeholder='Search for Cuisines'/>
       </div>
 
 
@@ -152,6 +151,32 @@ let [ham , setHam] = useState(true);
   </AccordionItem>
   <div className='spanBorder'></div>
 
+  <AccordionItem >
+    <h2>
+      <AccordionButton className='a-box-span'>
+        <Box  flex='1' textAlign='left' className='accord'>
+        Features
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={0} mt={-5}>
+        <div className='a-sidebar-detail'>
+      <div>
+        <input type="text" className='sidenav-inp' onChange={(e)=>debouncing(e,arr4,setCheckboxProduct4)} placeholder='Search'/>
+      </div>
+
+      {checkboxProduct4.map((item,i)=>{
+        return  <div key={i+1}>
+        <input type="checkbox" value={item} onChange={(e)=>filtercheck(e)}/> <span>{item}</span>
+       </div>
+      })}
+        </div>
+    </AccordionPanel>
+  </AccordionItem>
+  <div className='spanBorder'></div>
+
+
 
   <AccordionItem >
     <h2>
@@ -165,7 +190,7 @@ let [ham , setHam] = useState(true);
     <AccordionPanel pb={0} mt={-5}>
         <div className='a-sidebar-detail'>
       <div>
-        <input type="text" className='sidenav-inp' placeholder='Search'/>
+        <input type="text" className='sidenav-inp' onChange={(e)=>debouncing(e,arr3,setCheckboxProduct3)} placeholder='Search'/>
       </div>
 
 {checkboxProduct3.map((item,i)=>{
@@ -180,30 +205,7 @@ let [ham , setHam] = useState(true);
   <div className='spanBorder'></div>
 
 
-  <AccordionItem >
-    <h2>
-      <AccordionButton className='a-box-span'>
-        <Box  flex='1' textAlign='left' className='accord'>
-        Features
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={0} mt={-5}>
-        <div className='a-sidebar-detail'>
-      <div>
-        <input type="text" className='sidenav-inp' placeholder='Search'/>
-      </div>
-
-      {checkboxProduct4.map((item,i)=>{
-        return  <div key={i+1}>
-        <input type="checkbox" value={item} onChange={(e)=>filtercheck(e)}/> <span>{item}</span>
-       </div>
-      })}
-        </div>
-    </AccordionPanel>
-  </AccordionItem>
-  <div className='spanBorder'></div>
+ 
  
 </Accordion>
 </div>

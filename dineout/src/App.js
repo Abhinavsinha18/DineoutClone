@@ -13,12 +13,6 @@ function App() {
   return (
     <div className="App">
       {/* <Navbar setLogin={setLogin} login={login} /> */}
-      <HomeNav
-        setLogin={setLogin}
-        login={login}
-        isLogin={isLogin}
-        setIsLogin={setIsLogin}
-      />
       {login &&
         (isLogin ? (
           <Login
