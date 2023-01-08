@@ -2,12 +2,17 @@ import { useRef, useState } from "react";
 import "./productBox.css";
 import DivProduct from "./DivProduct";
 import { Link } from "react-router-dom";
+import { useToast } from "@chakra-ui/react";
 
 const ProductBox = ({ state, setState, arr, setLimit }) => {
   let seletref = useRef(null);
   let [refresh, setRefresh] = useState(0);
 
   // console.log(state);
+
+
+
+ 
 
   const Sorting = () => {
     var selected = seletref.current.value;
@@ -52,6 +57,9 @@ const ProductBox = ({ state, setState, arr, setLimit }) => {
       });
       setRefresh((pre) => pre + 1);
     }
+    
+
+
   };
 
   return (

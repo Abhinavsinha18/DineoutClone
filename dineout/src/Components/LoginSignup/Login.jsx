@@ -1,7 +1,12 @@
 import { border } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-function Login({ setLogin, setIsLogin }) {
+function Login({ setLogin, setIsLogin, isLogin }) {
+  // const [showThis, setShowThis] = useState(true);
+
   const overlay = {
+    display: "grid",
     position: "fixed",
     top: 0,
     left: 0,
@@ -11,15 +16,36 @@ function Login({ setLogin, setIsLogin }) {
     width: "100vw",
     background: "rgba(0,0,0,0.25)",
     zIndex: 1000,
-    display: "grid",
+    // display: "grid",
     placeItems: "center",
   };
 
-  return (
+  const [loginState, setLoginState] = useState({ email: "", password: "" });
+  // console.log(loginState);
+  console.log("state:", loginState);
+  function handleLogin() {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const curUser = users.filter(
+      (us) =>
+        us.email === loginState.email && us.password === loginState.password
+    );
+    if (curUser.length) {
+      alert("congatulations!");
+      setIsLogin(false);
+      setLogin(false);
+      // setShowThis(false);
+      // console.log("loginState:", login);
+      localStorage.setItem("loggedInUser", JSON.stringify(loginState));
+    } else {
+      alert("wrong credentials!");
+      setIsLogin(false);
+    }
+  }
+
+  return isLogin ? (
     <div style={overlay}>
       <div
         style={{
-          height: "15rem",
           width: "25rem",
           background: "white",
           position: "relative",
@@ -28,7 +54,10 @@ function Login({ setLogin, setIsLogin }) {
         }}
       >
         <span
-          onClick={(e) => setLogin(false)}
+          onClick={(e) => {
+            setLogin(true);
+            setIsLogin(false);
+          }}
           style={{ position: "absolute", right: "1rem", top: "1rem" }}
         >
           X
@@ -49,13 +78,38 @@ function Login({ setLogin, setIsLogin }) {
             paddingBottom: "0.7rem",
             border: "none",
             outline: "none",
+            marginBottom: "1rem",
             borderBottom: "1px solid gray",
             width: "100%",
           }}
+          value={loginState.email}
           type="text"
+          name="email"
+          onChange={(e) =>
+            setLoginState((p) => ({ ...p, [e.target.name]: e.target.value }))
+          }
           placeholder="Enter Mobile Number or Email"
         />
+        <input
+          onChange={(e) =>
+            setLoginState((p) => ({ ...p, [e.target.name]: e.target.value }))
+          }
+          style={{
+            display: "block",
+            paddingBottom: "0.7rem",
+            border: "none",
+            outline: "none",
+
+            borderBottom: "1px solid gray",
+            width: "100%",
+          }}
+          name="password"
+          type="password"
+          value={loginState.password}
+          placeholder="Enter Password"
+        />
         <button
+          onClick={handleLogin}
           style={{
             display: "block",
             width: "100%",
@@ -68,15 +122,29 @@ function Login({ setLogin, setIsLogin }) {
         >
           Continue
         </button>
-        <hr style={{ position: "relative", top: "11.5%", zIndex: 0 }} />
+        <button
+          style={{
+            display: "block",
+            width: "100%",
+            marginTop: "1.5rem",
+            height: "2.5rem",
+            background: "tomato",
+            color: "white",
+            border: "none",
+          }}
+          onClick={() => {
+            setIsLogin(false);
+          }}
+        >
+          Sign Up
+        </button>
         <p
           style={{
             background: "white",
-            padding: "0 1rem",
+            padding: "1rem 1rem",
             width: "fit",
-            display: "inline-block",
+            textAlign: "center",
             position: "relative",
-            marginTop: "-10px",
           }}
         >
           Or Login via
@@ -117,6 +185,8 @@ function Login({ setLogin, setIsLogin }) {
         </div>
       </div>
     </div>
+  ) : (
+    ""
   );
 }
 

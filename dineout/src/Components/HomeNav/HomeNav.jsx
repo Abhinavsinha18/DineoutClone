@@ -5,7 +5,7 @@ import locationLogo from "./assets/locationLogo.png";
 import { NavLink } from "react-router-dom";
 import menu from "./assets/menu.png";
 
-const HomeNav = () => {
+const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
   const [isCurr, setIsCurr] = useState({
     home: true,
     bookatable: false,
@@ -32,6 +32,9 @@ const HomeNav = () => {
   const toogleMenu = () => {
     setMenuStatus(!menuStatus);
   };
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  console.log("user Name:", users[0].name);
+  const LoginduserName = users[0].name;
   return (
     <>
       <div className="nav">
@@ -182,9 +185,35 @@ const HomeNav = () => {
           )}
         </div>
         <div className="rightNav">
-          <div className="button">
-            <button className="loginBtn">LOG IN</button>
-          </div>
+          {login ? (
+            <div className="button">
+              <button
+                className="loginBtn"
+                onClick={() => {
+                  setIsLogin(!isLogin);
+                }}
+              >
+                LOG IN
+              </button>
+            </div>
+          ) : (
+            <div
+              className="userLogin"
+              onClick={() => {
+                setLogin(true);
+              }}
+              style={{
+                background: "#ff645a",
+                color: "#fff",
+                fontWeight: "700",
+                cursor: "pointer",
+                padding: ".6rem",
+                borderRadius: ".4rem",
+              }}
+            >
+              {LoginduserName} / Logout
+            </div>
+          )}
           <div className="forSmallScreen">
             {/* <div className="profileDrop"> */}
             <img className="menubtn" src={menu} alt="" onClick={toogleMenu} />

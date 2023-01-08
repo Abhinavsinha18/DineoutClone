@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 function Socials() {
     return (
-        <div>
+        <div className="social-section">
             <NavLink to='/'>
                 <img src='https://im1.dineout.co.in/images/uploads/misc/2019/Jul/25/website-logo.png' className='navLogo' alt='navlogo' />
             </NavLink>
