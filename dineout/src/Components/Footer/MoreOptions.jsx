@@ -6,6 +6,7 @@ function MoreOptions() {
     var topfacilities = ['Fine Dining', '5 Star', 'Roofttop'];
     var toplocations = ['Rajouri Garden', 'Hauz Khaz', 'DLF Cyber City', 'Connaught place', 'Khan Market', 'Dwarka'];
     return (
+        <div className="snddiv">
         <div className="moreoptiondiv">
             <div>
                 <h4>Discover</h4>
@@ -93,6 +94,7 @@ function MoreOptions() {
                 </div>
             </div>
 
+        </div>
         </div>
     )
 }
