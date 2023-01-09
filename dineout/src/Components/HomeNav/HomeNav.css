@@ -178,6 +178,7 @@ justify-content: left;
   .navDropMenu ,.navdropdown,.navDropMenu>img{
     display: none;
   }
+ 
 }
 @media (max-width: 980px){
   .rightNav{
@@ -189,7 +190,7 @@ justify-content: left;
 }
 @media (max-width: 470px) {
   .leftNav img {
-    width: 3.5rem;
+    width: 4rem;
     padding: 5px;
   }
   .secondNav {
@@ -222,7 +223,7 @@ padding: 5px;
   }
   .rightNav .button .loginBtn ,.srch-btn>button {
     width: 3rem;
-    padding: 0.2rem;
+    padding: 0.5rem;
     border: none;
     margin-left: 5%;
     background: #ff645a;
@@ -318,6 +319,10 @@ padding: 5px;
     .srh-a{
         display: none;
     }
+    .search-a-box{
+      gap: 10px;
+      width: 120%;
+    }
 }
 
 
@@ -325,7 +330,7 @@ padding: 5px;
 .navigations-two{
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 400px;
   padding-left: 10%;
   padding-right: 10%;
@@ -334,6 +339,7 @@ padding: 5px;
 .navigations-two >.navlink {
   text-decoration: none;
   color: #636363;
+  padding-left: 10px;
   font-size: 16px;
 }
 
@@ -342,4 +348,17 @@ padding: 5px;
   font-weight: 700;
   color: coral;
   border-top: 3px solid coral;
+}
+
+@media (max-width:752px) {
+  .navigations-two >.navlink {
+    text-decoration: none;
+    color: #636363;
+    font-size: 12px;
+  }
+}
+@media (max-width:500px) {
+  .navigations-two {
+  display: none;
+  }
 }
