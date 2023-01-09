@@ -7,6 +7,7 @@ import GoToTop from "../Components/Home/GoToTop/GoToTop";
 import Blog from "../Components/Blog/Blog";
 import { useState } from "react";
 import Login from "../Components/LoginSignup/Login";
+import Footer from "../Components/Footer/Footer";
 
 function AllRoutes() {
   const [checkProps, setCheckProps] = useState({
@@ -37,6 +38,7 @@ function AllRoutes() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
       <GoToTop />
+      <Footer />
     </div>
   );
 }
