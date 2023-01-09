@@ -16,30 +16,15 @@ import {
 
 import Chatbot from "../Chatbot/Chatbot";
 import HomeNav from "../HomeNav/HomeNav";
-// import { useState } from "react";
 
 function Home() {
-  // let [flag,setFlag] =useState(false);
+
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // let ShowLogo = ()=>{
-  //    imgGif.current.innerText = "Book Now 🧭";
-  //    imgGif.current.style.backgroundColor = "purple";
-
-  // }
-  // let RemoveLogo = ()=>{
-  //     imgGif.current.style.backgroundColor = "orangered";
-  //     imgGif.current.innerText = "HOLA 👋"
-  //  }
 
   return (
     <div>
-      {/* <div style={{position: "fixed",bottom: "5%",zIndex: "1",left: "2%",width:"10%",textAlign:"center"}} onMouseLeave={RemoveLogo} onMouseEnter={ShowLogo}>
-          <Link to={"/bookatable"} style={{textDecoration:"none"}}><p ref={imgGif} style={{color:"white",borderRadius:"20px",padding:"5px",top:"20px",position:"relative",backgroundColor:"orangered",width:"80%"}}>HOLA 👋</p></Link>
-          <img src="https://thumbs.gfycat.com/AcidicUnfoldedGoldenretriever-max-1mb.gif" alt="" width={"100%"}/>
-      </div>   */}
-      {/* <h1>{flag? "Ask Querry" : "Hola"}</h1> */}
       <img
         style={{
           width: "120px",
@@ -62,9 +47,9 @@ function Home() {
           height={"10px"}
           position="fixed"
           left="8%"
-          top="10%"
+          top="18%"
         >
-          <ModalBody height={"800px"} zIndex="1000">
+          <ModalBody height={"500px"} zIndex="2000">
             <Chatbot />
             <ModalCloseButton
               bg="red"

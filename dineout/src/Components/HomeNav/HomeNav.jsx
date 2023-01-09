@@ -92,7 +92,7 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
            </div>
        </div>
           ) : (
-            <div className="navigations">
+            <div className="navigations-two">
               <NavLink
                 to="/"
                 className="navlink curr home"

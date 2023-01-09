@@ -1,5 +1,5 @@
 .nav {
-  width: 100vw;
+  width: 100%;
   position: fixed;
   display: flex;
   align-items: center;
@@ -14,13 +14,13 @@
   padding-left: 0;
 }
 .secondNav {
-  top: 4.3rem;
+  top: 9%;
   border-top: 1px solid gray;
   width: 100%;
   position: fixed;
   display: flex;
   align-items: center;
-  padding: 0.3rem;
+  padding:1%;
   background: #fff;
   z-index: 100;
   justify-content: center;
@@ -39,7 +39,7 @@
 }
 .navDropMenu {
   display: flex;
-  width: 60%;
+  width: 100%;
   flex-direction: row;
   cursor: pointer;
 }
@@ -97,6 +97,7 @@ justify-content: left;
   width: 7rem;
   padding: 0.5rem;
   border: none;
+  margin-left: 2%;
   background: #ff645a;
   color: #fff;
   /* font-size: 18px; */
@@ -173,20 +174,65 @@ justify-content: left;
 .menubtn {
   display: none;
 }
-@media (max-width: 1024px) {
-  .navDropMenu {
+@media (max-width: 1135px) {
+  .navDropMenu ,.navdropdown,.navDropMenu>img{
     display: none;
-    position: relative;
-    right: 2rem;
+  }
+}
+@media (max-width: 980px){
+  .rightNav{
+   padding: 0;
+  }
+  .leftNav{
+    padding: 0;
+  }
+}
+@media (max-width: 470px) {
+  .leftNav img {
+    width: 3.5rem;
+    padding: 5px;
+  }
+  .secondNav {
+    top: 9.5%;
+    border-top: 1px solid gray;
+    width: 100%;
+    position: fixed;
+    display: flex;
+padding: 5px;
+    align-items: center;
+    background: #fff;
+    z-index: 100;
+    justify-content: space-around;
+    box-shadow: 2px 4px 5px 0 rgb(204 199 198 / 40%);
+  }
+  .secondNav .navigations {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
   }
 }
 @media (max-width: 770px) {
   .menubtn {
     display: block;
   }
-  .secondNav,
-  .centerNav {
+  .secondNav{
     display: none;
+  }
+  .rightNav .button .loginBtn ,.srch-btn>button {
+    width: 3rem;
+    padding: 0.2rem;
+    border: none;
+    margin-left: 5%;
+    background: #ff645a;
+    color: #fff;
+    /* font-size: 18px; */
+    font-weight: 100;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: 0.7s;
+    box-shadow: 0 0 6px coral;
   }
   .menu {
     position: relative;
@@ -272,4 +318,28 @@ justify-content: left;
     .srh-a{
         display: none;
     }
+}
+
+
+
+.navigations-two{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  width: 400px;
+  padding-left: 10%;
+  padding-right: 10%;
+  gap: 10px;
+}
+.navigations-two >.navlink {
+  text-decoration: none;
+  color: #636363;
+  font-size: 16px;
+}
+
+.navigations-two >.navlink :hover{
+
+  font-weight: 700;
+  color: coral;
+  border-top: 3px solid coral;
 }
