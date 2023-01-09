@@ -33,7 +33,7 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
     setMenuStatus(!menuStatus);
   };
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  //console.log("user Name:", users[0].name);
+  console.log("user Name:", users[0].name);
   const LoginduserName = users[0].name;
   return (
     <>
@@ -211,7 +211,7 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
                 borderRadius: ".4rem",
               }}
             >
-              {LoginduserName} / Logout
+              {LoginduserName}
             </div>
           )}
           <div className="forSmallScreen">

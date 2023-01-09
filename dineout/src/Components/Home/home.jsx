@@ -82,7 +82,6 @@ function Home() {
       </Modal>
 
       {/* <Navbar/> */}
-      <HomeNav />
       <SearchBar />
       <Offers />
       <ImgSlider />
