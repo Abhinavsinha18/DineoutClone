@@ -52,7 +52,7 @@ function Signup({ setLogin, setIsLogin, isLogin }) {
       <div
         style={{
           height: "15rem",
-          width: "25rem",
+          width: "50%",
           background: "white",
           position: "relative",
           borderRadius: "3px",
