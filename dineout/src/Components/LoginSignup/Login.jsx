@@ -46,7 +46,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
     <div style={overlay}>
       <div
         style={{
-          width: "50%",
+          width: "35%",
           background: "white",
           position: "relative",
           borderRadius: "3px",
