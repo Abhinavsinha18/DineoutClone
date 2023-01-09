@@ -33,8 +33,15 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
     setMenuStatus(!menuStatus);
   };
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  console.log("user Name:", users[0].name);
-  const LoginduserName = users[0].name;
+  let LoginduserName;
+  if (users.length > 0) {
+    LoginduserName = users[0].name;
+    console.log("user Name:", users.length);
+  } else {
+    // LoginduserName = "";
+    setLogin(true);
+    localStorage.setItem("users", JSON.stringify([]));
+  }
   return (
     <>
       <div className="nav">
@@ -211,7 +218,7 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
                 borderRadius: ".4rem",
               }}
             >
-              {LoginduserName} / Logout
+              {LoginduserName}
             </div>
           )}
           <div className="forSmallScreen">

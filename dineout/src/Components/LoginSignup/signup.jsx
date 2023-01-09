@@ -2,6 +2,7 @@ import { border } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 function Signup({ setLogin, setIsLogin, isLogin }) {
+  const [showSignup, setShowSignUp] = useState(true);
   const overlay = {
     position: "fixed",
     top: 0,
@@ -12,7 +13,7 @@ function Signup({ setLogin, setIsLogin, isLogin }) {
     width: "100vw",
     background: "rgba(0,0,0,0.25)",
     zIndex: 1000,
-    display: isLogin ? "grid" : "none",
+    display: isLogin ? "none" : "grid",
     placeItems: "center",
   };
 
@@ -39,14 +40,14 @@ function Signup({ setLogin, setIsLogin, isLogin }) {
       alert("This email is already registered.");
     } else {
       alert("Congratulations! Sign Up successfull");
-      setIsLogin(false);
+      setIsLogin(true);
       userArr.push(signupState);
       console.log("arr:", userArr);
       localStorage.setItem("users", JSON.stringify(userArr));
     }
   }
 
-  return (
+  return showSignup ? (
     <div style={overlay}>
       <div
         style={{
@@ -59,7 +60,7 @@ function Signup({ setLogin, setIsLogin, isLogin }) {
         }}
       >
         <span
-          onClick={(e) => setLogin(false)}
+          onClick={(e) => setShowSignUp(false)}
           style={{ position: "absolute", right: "1rem", top: "1rem" }}
         >
           X
@@ -139,6 +140,8 @@ function Signup({ setLogin, setIsLogin, isLogin }) {
         ></div>
       </div>
     </div>
+  ) : (
+    <></>
   );
 }
 
