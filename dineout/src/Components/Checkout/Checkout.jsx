@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Checkout.css";
 
 const Checkout = ({ checkProps }) => {
@@ -7,6 +7,9 @@ const Checkout = ({ checkProps }) => {
   setTimeout(() => {
     setTableStatus(true);
   }, 2000);
+  useEffect(() => {
+    alert("Congratulations! Your Table has been booked.");
+  });
   return (
     <div className="Shcontainer">
       <div className="Shmain">
