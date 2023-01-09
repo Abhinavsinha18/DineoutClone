@@ -1,6 +1,7 @@
 import { border } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {BsGoogle} from "react-icons/bs"
 
 function Login({ setLogin, setIsLogin, isLogin }) {
   // const [showThis, setShowThis] = useState(true);
@@ -180,7 +181,8 @@ function Login({ setLogin, setIsLogin, isLogin }) {
               marginTop: "-10px",
             }}
           >
-            Gmail
+            <BsGoogle/>
+            mail
           </button>
         </div>
       </div>
