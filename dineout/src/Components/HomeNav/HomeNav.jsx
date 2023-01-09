@@ -48,52 +48,6 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
     setLogin(true);
     localStorage.setItem("users", JSON.stringify([]));
   }
-
-// _____________________searchbar________________+
-
-
-let [voice, setVoice]= useState(""); 
-let [flag,setFlag] = useState(true);
-
-const commands = [
- {
-     command : `clear`,
-     callback : ({resetTranscript})=>{
-         setVoice("")
-         resetTranscript()
- }
- },
- {
-     command : `open *`,
-     callback : (site) =>{
-         window.open('http://'+site)
-     }
- }
-]
-
-const {
- transcript,
-   listening,
-   resetTranscript,
-   browserSupportsSpeechRecognition
- } = useSpeechRecognition({commands});
-
- if (!browserSupportsSpeechRecognition) {
-   return <span>Browser doesn't support speech recognition.</span>;
- }
-
-
- const voiceApp=()=>{  
-     if(flag){
-         setFlag(false)
-     }else{
-
-         setFlag(true);
-     }
- }
- 
-
-
   return (
     <>
       <div className="nav">
