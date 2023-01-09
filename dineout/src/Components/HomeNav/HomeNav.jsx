@@ -1,15 +1,21 @@
 import "./HomeNav.css";
 import logo from "./assets/website-logo.webp";
 import locationLogo from "./assets/locationLogo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import menu from "./assets/menu.png";
 import React, { useEffect, useRef, useState } from 'react';
 import {FaMicrophoneSlash, FaMicrophone} from "react-icons/fa"
 import {FaSearch} from "react-icons/fa";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import {GiTireIronCross} from "react-icons/gi"
+import {GiTireIronCross} from "react-icons/gi";
+import "./debounce.css"
 
 const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
+let [ data,setData] = useState([])
+let [ deb,setDeb] = useState([])
+
+let debounce = useRef(null)
+
   const [isCurr, setIsCurr] = useState({
     home: true,
     bookatable: false,
@@ -20,6 +26,19 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
   const [secondnav, setSecondnav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [menuStatus, setMenuStatus] = useState(false);
+
+useEffect(()=>{
+fetchData();
+},[deb])
+
+
+  let fetchData= async()=>{
+   await fetch("https://dineoutclone-foc1.onrender.com/products")
+   .then((res)=>res.json())
+   .then((d)=>{
+     setData(d)
+   })
+  }
 
   const searchVisibility = () => {
     if (window.scrollY > 100) {
@@ -40,9 +59,7 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
   let LoginduserName;
   if (users.length > 0) {
     LoginduserName = users[0].name;
-    console.log("user Name:", users.length);
   } else {
-    // LoginduserName = "";
     setLogin(true);
     localStorage.setItem("users", JSON.stringify([]));
   }
@@ -92,10 +109,60 @@ const {
      }
  }
  
+let Debouncing = (e) =>{
+   resetTranscript()
+   setVoice(e.target.value);
+   let temp = data.filter((el)=>{
+        return el.name.toLowerCase().includes(e.target.value.toLowerCase());
+      })
 
+     
+      if(e.target.value===""){
+        debounce.current.style.display = "none"
+        debounce.current.style.height = "0"
+        setDeb([])
+      }else{
+        debounce.current.style.display = "block"
+        debounce.current.style.height = "400px"
+        setDeb(temp);
+      }
+    }
 
   return (
     <>
+
+{/* _________________________________Debounce___________________________________________________________ */}
+
+<div className="deb-div"  ref={debounce}>
+
+<div>
+  {deb.map((e)=>{
+    return <Link to={`/bookatable/${e.id}`} className="deb-inner-div" onClick={()=>{
+      setDeb([]);
+      debounce.current.style.height = "0"
+      debounce.current.style.display = "none"
+    }}>
+      <div>
+        <img src={e.image} alt="" />
+      </div>
+      <div>{e.name}</div>
+      <div>{e.category}</div>
+    </Link>
+  })}
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+{/* _________________________________Debounce___________________________________________________________ */}
+
+
       <div className="nav">
         <div className="leftNav">
           <NavLink to="/">
@@ -117,11 +184,15 @@ const {
            <div className='srh-a'>
            <FaSearch/>
            </div>
-           <input type="text"  placeholder='Search for Restaurants, Cuisines, Location...'  value={voice.length>0 ? voice : transcript} onChange={(e)=>Debouncing(e)} />
+           <input type="text"  placeholder='Search for Restaurants, Cuisines, Location...'  value={voice.length>0 ? voice : transcript}
+           
+           onChange={(e)=>Debouncing(e)} />
 
            <span className='cross-aa'>{ voice.length>0 || listening ==false ? <GiTireIronCross onClick={()=>{
+             setVoice("");
+             debounce.current.style.height = "0"
+             debounce.current.style.display = "none"
                resetTranscript();
-               setVoice("");
            }}/> : null} </span>
 
 
@@ -254,6 +325,11 @@ const {
               </NavLink>
             </div>
           )}
+
+
+
+
+
         </div>
         <div className="rightNav">
           {login ? (
