@@ -46,7 +46,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
     <div style={overlay}>
       <div
         style={{
-          width: "25rem",
+          width: "35%",
           background: "white",
           position: "relative",
           borderRadius: "3px",
@@ -152,7 +152,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
         <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
           <button
             style={{
-              padding: "1rem  5rem",
+              padding: "1rem  15%",
               height: "40px",
               background: "#486FA4",
               border: "none",
@@ -173,7 +173,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
           </button>
           <button
             style={{
-              padding: "1rem  5rem",
+              padding: "1rem  15%",
               height: "40px",
               color: "grey",
               background: "white",

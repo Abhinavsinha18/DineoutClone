@@ -46,11 +46,7 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
     setLogin(true);
     localStorage.setItem("users", JSON.stringify([]));
   }
-
-// _____________________searchbar________________+
-
-
-let [voice, setVoice]= useState(""); 
+  let [voice, setVoice]= useState(""); 
 let [flag,setFlag] = useState(true);
 
 const commands = [
@@ -96,14 +92,6 @@ const {
      }
  }
  
-
-
- let Debouncing = (e)=>{
-  resetTranscript()
-   setVoice(e.target.value)
-}
-
-
 
 
   return (
