@@ -1,9 +1,15 @@
-import React, { useState } from "react";
 import "./HomeNav.css";
 import logo from "./assets/website-logo.webp";
 import locationLogo from "./assets/locationLogo.png";
 import { NavLink } from "react-router-dom";
 import menu from "./assets/menu.png";
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+// import "./Nav.css"
+import {FaMicrophoneSlash, FaMicrophone} from "react-icons/fa"
+import {FaSearch} from "react-icons/fa";
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import {GiTireIronCross} from "react-icons/gi"
 
 const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
   const [isCurr, setIsCurr] = useState({
@@ -33,8 +39,15 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
     setMenuStatus(!menuStatus);
   };
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  console.log("user Name:", users[0].name);
-  const LoginduserName = users[0].name;
+  let LoginduserName;
+  if (users.length > 0) {
+    LoginduserName = users[0].name;
+    console.log("user Name:", users.length);
+  } else {
+    // LoginduserName = "";
+    setLogin(true);
+    localStorage.setItem("users", JSON.stringify([]));
+  }
   return (
     <>
       <div className="nav">
@@ -54,15 +67,30 @@ const HomeNav = ({ setLogin, login, setIsLogin, isLogin }) => {
         </div>
         <div className="centerNav">
           {showSearch ? (
-            <div className="searchdiv">
-              <i className="fa-solid fa-magnifying-glass glass-icon searchicon"></i>
-              <input
-                type="text"
-                className="searchbox"
-                placeholder="Search for Restaurants, Cuisines, Location..."
-              />
-              <button className="searchBtn">Search</button>
-            </div>
+           <div className='search-a-box'>
+           <div className='srh-a'>
+           <FaSearch/>
+           </div>
+           <input type="text"  placeholder='Search for Restaurants, Cuisines, Location...'  value={voice.length>0 ? voice : transcript} onChange={(e)=>{
+                  resetTranscript()
+                  setVoice(e.target.value)
+           }} />
+
+           <span className='cross-aa'>{ voice.length>0 || listening ==false ? <GiTireIronCross onClick={()=>{
+               resetTranscript();
+               setVoice("");
+           }}/> : null} </span>
+
+
+           <div className='mic-a'   >
+               <div onClick={voiceApp}>
+                      {flag ? <FaMicrophoneSlash onClick={SpeechRecognition.startListening}/> : <FaMicrophone onClick={SpeechRecognition.stopListening}/>}
+               </div>
+           </div>
+           <div className='srch-btn'>
+           <button>Search</button>
+           </div>
+       </div>
           ) : (
             <div className="navigations">
               <NavLink
