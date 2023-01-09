@@ -62,6 +62,12 @@ const commands = [
  }
  },
  {
+  command : `Product`,
+  callback : () =>{
+      window.open('https://www.dineout.co.in/')
+  }
+},
+ {
      command : `open *`,
      callback : (site) =>{
          window.open('http://'+site)
@@ -92,6 +98,14 @@ const {
  
 
 
+ let Debouncing = (e)=>{
+  resetTranscript()
+   setVoice(e.target.value)
+}
+
+
+
+
   return (
     <>
       <div className="nav">
@@ -115,10 +129,7 @@ const {
            <div className='srh-a'>
            <FaSearch/>
            </div>
-           <input type="text"  placeholder='Search for Restaurants, Cuisines, Location...'  value={voice.length>0 ? voice : transcript} onChange={(e)=>{
-                  resetTranscript()
-                  setVoice(e.target.value)
-           }} />
+           <input type="text"  placeholder='Search for Restaurants, Cuisines, Location...'  value={voice.length>0 ? voice : transcript} onChange={(e)=>Debouncing(e)} />
 
            <span className='cross-aa'>{ voice.length>0 || listening ==false ? <GiTireIronCross onClick={()=>{
                resetTranscript();
