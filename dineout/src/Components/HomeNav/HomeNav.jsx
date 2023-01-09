@@ -4,8 +4,6 @@ import locationLogo from "./assets/locationLogo.png";
 import { NavLink } from "react-router-dom";
 import menu from "./assets/menu.png";
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-// import "./Nav.css"
 import {FaMicrophoneSlash, FaMicrophone} from "react-icons/fa"
 import {FaSearch} from "react-icons/fa";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
