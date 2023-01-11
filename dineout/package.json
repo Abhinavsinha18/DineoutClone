@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Abhinavsinha18.github.io/dineout",
+  "Homepage": "https://Abhinavsinha18.github.io/dineout",
   "name": "dineout",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +11,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^8.2.4",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",

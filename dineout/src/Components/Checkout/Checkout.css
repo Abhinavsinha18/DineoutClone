@@ -1,9 +1,15 @@
 .Shcontainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+grid-template-columns: 30% 60% 10%;
   height: 100vh;
   padding-top: 3rem;
+  
+}
+.Shcontainer>div:first-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
 }
 .Shmain {
   width: 45rem;
