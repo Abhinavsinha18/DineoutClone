@@ -19,6 +19,8 @@ function Login({ setLogin, setIsLogin, isLogin }) {
     zIndex: 1000,
     // display: "grid",
     placeItems: "center",
+    alignItems:"center",
+    // justifyContent:"center"
   };
 
   const [loginState, setLoginState] = useState({ email: "", password: "" });
@@ -50,8 +52,8 @@ function Login({ setLogin, setIsLogin, isLogin }) {
           width: "35%",
           background: "white",
           position: "relative",
-          borderRadius: "3px",
-          padding: "2rem",
+          borderRadius: "4px",
+          padding: "1rem",
         }}
       >
         <span
@@ -68,7 +70,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
             color: "tomato",
             textAlign: "left",
             fontSize: "28px",
-            marginBottom: "2rem",
+            marginBottom: "1.5rem",
           }}
         >
           Log In / Sign Up
@@ -114,7 +116,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
           style={{
             display: "block",
             width: "100%",
-            marginTop: "1.5rem",
+            marginTop: "1rem",
             height: "2.5rem",
             background: "tomato",
             color: "white",
@@ -127,7 +129,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
           style={{
             display: "block",
             width: "100%",
-            marginTop: "1.5rem",
+            marginTop: "5px",
             height: "2.5rem",
             background: "tomato",
             color: "white",
@@ -146,6 +148,7 @@ function Login({ setLogin, setIsLogin, isLogin }) {
             width: "fit",
             textAlign: "center",
             position: "relative",
+            marginTop:"-2px"
           }}
         >
           Or Login via

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Checkout.css";
 import done from "./done.gif";
 import minion from "./minion.gif"
@@ -11,7 +11,6 @@ const Checkout = ({ checkProps }) => {
     setTableStatus(true);
     <Navigate to="/"/>
   }, 3000);
-
   return (
     <div className="Shcontainer">
       <div>
