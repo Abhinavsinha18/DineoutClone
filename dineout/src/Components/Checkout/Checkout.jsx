@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import "./Checkout.css";
+import done from "./done.gif";
+import minion from "./minion.gif"
+import { Navigate } from "react-router-dom";
 
 const Checkout = ({ checkProps }) => {
   console.log(checkProps);
   const [tableStatus, setTableStatus] = useState(false);
   setTimeout(() => {
     setTableStatus(true);
-  }, 2000);
+    <Navigate to="/"/>
+  }, 3000);
+
   return (
     <div className="Shcontainer">
+      <div>
+        <img src={minion} alt=""  width={"100%"} height="400px"/>
+      </div>
       <div className="Shmain">
         <div className="top">
           <h1>{checkProps.hotelName}</h1>
@@ -66,6 +74,7 @@ const Checkout = ({ checkProps }) => {
           </div>
         </div>
       </div>
+      <div></div>
     </div>
   );
 };

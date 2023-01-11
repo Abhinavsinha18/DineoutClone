@@ -77,7 +77,7 @@ const commands = [
  {
   command : `Product`,
   callback : () =>{
-      window.open('https://www.dineout.co.in/')
+      window.open('https://io-dineout.netlify.app/bookatable')
   }
 },
  {
