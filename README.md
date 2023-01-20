@@ -1,5 +1,19 @@
 # DineoutClone
 
+## About the Project
+
+![home page](https://user-images.githubusercontent.com/94513021/213809318-7a020232-c2ed-4148-be9c-7cf39c073f01.png)
+![dineout prod 1](https://user-images.githubusercontent.com/94513021/213809356-61ad9abc-9c60-4272-86ce-b2dc910b37b5.png)
+![dine des](https://user-images.githubusercontent.com/94513021/213809406-211878d5-751e-49b7-b7e2-d0cfa4ff6b87.png)
+
+
+
+## Responsive
+
+
+![WhatsApp Image 2023-01-21 at 2 56 02 AM](https://user-images.githubusercontent.com/94513021/213809438-6d989a7c-b818-434e-a8b0-8e226f733363.jpeg)
+
+
 
 
 <!-- GETTING STARTED -->
