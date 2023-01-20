@@ -12,7 +12,7 @@ In this project we worked in group so we set up the the git repositary for trans
 1. Visual Studio Code
 2. Clone the repo
    ```sh
-   git clone https://github.com/chetantidgam123/shopdress
+   git clone https://github.com/Abhinavsinha18/DineoutClone.git
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
